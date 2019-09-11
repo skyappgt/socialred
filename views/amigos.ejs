@@ -1,0 +1,61 @@
+<% layout('laycompleto') -%>
+<nav class="navbar navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SkyRed</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/amigos">Amigos</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/blog">Blog <span class="caret"></span></a>
+        
+      </li>
+      <li><a href="#">Chat</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-left">
+      <li><a href="/perfil"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
+      <li><input type="text"> </li>
+      <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="perfil">
+  <div class="row"><!---->
+    <div class="fotoperfil col-xs-3 col-sm-3 col-lg-3">
+      <h3 style="margin-top:0px; margin-bottom:0px;"><%= user.username  %></h3>
+      <div class="images"></div>  
+        <img id="perfilimg" >        
+         <!-- <div class="pic glyphicon glyphicon-upload"></div>-->
+        </div>
+    </div>
+
+      <div class="datos col-xs-8 col-sm-8 col-lg-9">
+        <div class="form-inline">
+       
+         <div class="row"><strong>Datos Personales </strong><br>
+            <!--<button id="btnedit" type="submit" class="editar btn btn-default glyphicon glyphicon-edit" class="btn btn-info btn-lg" data-toggle="modal" data-target="" value="Editar"></button></div>-->
+          <div class="form-group">
+            <label  for="usuario">Nombre</label>
+            <input readonly="readonly" type="text" class="form-control" id="nombre" placeholder='' name="usuario" required>
+          </div>
+          <div class="form-group">
+            <label  for="usuario">Apellido</label>
+            <input readonly="readonly" type="text" class="form-control" id="apellido" placeholder="" name="usuario" required>
+          </div>
+          <div class="form-group">
+            <label  for="usuario">Ciudad</label>
+            <input readonly="readonly" type="text" class="form-control" id="ciudad" placeholder="" name="usuario" required>
+          </div>
+          <div class="form-group">
+            <label  for="blog">Ocupación</label>
+            <input type="text" class="form-control" id="pwd" placeholder="" name="blog" required>
+          </div>
+          <!--<div class="checkbox">
+            <label><input type="checkbox" name="remember"> Recordar</label>
+          </div>-->
+          
+        </form>
+       
+      </div>
+    </div>
+    

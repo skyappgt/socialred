@@ -1,0 +1,75 @@
+<% layout('laycompleto') -%>
+<script src="http://code.jquery.com/jquery-1.5.js"></script>
+<script>
+    function countChar(val) {
+      var len = val.value.length;
+      if (len >= 300) {
+        val.value = val.value.substring(0, 300);
+      } else {
+        $('#charNum').text(300 - len);
+      }
+    };
+  </script>
+
+<nav class="navbar navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SkyRed</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/amigos">Amigos</a></li>
+      <li class="dropdown"><a href="/blog">Blog </a>
+        
+      </li>
+      <li><a href="#">Chat</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-left">
+      <li><a href="/perfiledit"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
+      <li><input type="text"> </li>
+      <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <div class="perfil">
+    <div class="container"><!---->
+      <div class="row">
+        <div class="form-inline">
+          <div class="fotoperfil col-xs-5 col-sm-5 col-lg-5">
+            <h3 style="margin-top:0px; margin-bottom:0px;"><%= user.username  %></h3>
+            <div class="images"></div>  
+            <img id="perfilimg" >        
+          <!-- <div class="pic glyphicon glyphicon-upload"></div>-->
+          </div>
+          
+        <div class="datos col-xs-8 col-sm-7 col-lg-7">
+          
+            <form action="/blog" method="post">
+                  <!--<button id="btnedit" type="submit" class="editar btn btn-default glyphicon glyphicon-edit" class="btn btn-info btn-lg" data-toggle="modal" data-target="" value="Editar"></button></div>-->
+                <div class="form-group">
+                  <label  for="usuario">Publicar </label>
+                  <textarea onkeyup="countChar(this)" rows="3" cols="40" class="form-control" id="blog" placeholder='Ingresar una publicación' name="coment" required='true'></textarea>
+                    <div id="charNum"></div>  
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="guardar btn btn-default">Publicar</button> 
+                </div>    
+            <!--<div class="checkbox">
+              <label><input type="checkbox" name="remember"> Recordar</label>
+            </div>-->
+            </form>
+          
+          <div class="datos col-xs-10 col-sm-12 col-lg-12">
+              <% indexRouter.slice(0, 10).forEach(function(dat) { %>
+              <ul class="post">
+                  <li ><%= dat.username %></li>
+                  <p ><%= dat.coment %></p>
+                  <p ><%= dat.fcoment %></p>
+              </ul>    
+              <% }); %>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div> 
+  </div>

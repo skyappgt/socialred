@@ -1,0 +1,45 @@
+{
+  "name": "socialred",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "cucumber-js"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "ejs-locals": "^1.0.2",
+    "express": "~4.16.0",
+    "express-fileupload": "^1.0.0-alpha.1",
+    "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
+    "http-errors": "~1.6.2",
+    "location-href": "^1.0.0",
+    "mongodb": "^3.1.6",
+    "mongoose": "^5.2.17",
+    "morgan": "~1.9.0",
+    "multer": "^1.4.1",
+    "nodemon": "^1.18.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1",
+    "sinon": "^7.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chromedriver": "^2.43.0",
+    "cucumber": "^5.0.2",
+    "istanbul": "^0.4.5",
+    "loadtest": "^3.0.4",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "supertest": "^3.3.0"
+  }
+}

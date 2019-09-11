@@ -1,0 +1,79 @@
+<% layout('laycompleto') -%>
+<nav class="navbar navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SkyRed</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/amigos">Amigos</a></li>
+      <li class="active"><a href="/blog">Blog </a></a></li> 
+      <li><a href="#">Chat</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-left">
+      <li><a href="/perfil"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
+      <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="perfil">
+    <!--<div class="row">-->
+    <form ref='uploadForm' id="uploadForm" action="/upload" method="post" encType="multipart/form-data" >  
+        <div class="form-inline fotoperfil col-xs-3 col-sm-3 col-lg-3">
+          <h3 style="margin-top:0px; margin-bottom:0px;"><%= user.username  %></h3>
+          <div class="images">
+             <% indexRouter.forEach(function(dat) { %>
+              
+              <div id="perfpic" ></div>
+             <!-- <input type="file" name="sampleFile" class="btn btn-default"></input>
+              <button type="file" class="btn btn-default">+</button> -->
+              <% }); %>
+          </div>
+          <div id="upperfpic" class="pic glyphicon glyphicon-upload">Foto de Perfil</div>
+        </div>
+       <!-- <form ref='uploadForm' id="uploadForm" action="/upload" method="post" encType="multipart/form-data">
+            <input type="file" name="sampleFile" ></input >
+            <button id="upperfpic" type="file" class="btn btn-default">+</button> 
+        </form>-->
+          <div id="perfotos" class="pic glyphicon glyphicon-upload">Fotos</div>
+          <div class="images">
+              <div id="perf-fotos"></div>
+          </div>
+    </form>
+    <form action="/perfiledit" method="post">
+      <div class="datos col-xs-8 col-sm-8 col-lg-9">  
+        <div class="form-inline"> 
+            <div class="row"><strong>Datos Personales </strong><br>
+            <!--<button id="btnedit" type="submit" class="editar btn btn-default glyphicon glyphicon-edit" class="btn btn-info btn-lg" data-toggle="modal" data-target=""></button></div>-->
+              <% indexRouter.forEach(function(dat) { %>
+              <div class="form-group">
+                <label  for="usuario">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="<%= dat.name %>" name="name" >
+              </div>
+              <div class="form-group">
+                <label  for="usuario">Apellido</label>
+                <input type="text" class="form-control" id="apellido" placeholder="<%= dat.lastname %>" name="lastname" >
+              </div>
+              <div class="form-group">
+                <label  for="usuario">Ciudad</label>
+                <input type="text" class="form-control" id="ciudad" placeholder="<%= dat.city %>" name="city" >
+              </div>
+              <div class="form-group">
+                <label  for="blog">Ocupación</label>
+                <input type="text" class="form-control" id="pwd" placeholder="<%= dat.ocupa %>" name="ocupa" >
+              </div>
+              <div class="form-group">
+                  <button type="submit" class="guardar btn btn-default">Actualizar</button> 
+                </div>
+              <% }); %>
+              <!--<div class="checkbox">
+                <label><input type="checkbox" name="remember"> Recordar</label>
+              </div>-->        
+            </div>
+        </div> 
+      </div>      
+    </form> 
+</div>
+      
+    
+  <script src="js/pop.js"></script>
